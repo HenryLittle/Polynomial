@@ -1,41 +1,41 @@
-#ifndef _POLY_CAL_H_
-#define _POLY_CAL_H_
+// #ifndef _POLY_CAL_H_
+// #define _POLY_CAL_H_
 
-#define IS_OPERAND(a) (a == '(' || a == ')' || a == '+' || a == '-' || a == '*' || a == '=')
+// #define IS_OPERAND(a) (a == '(' || a == ')' || a == '+' || a == '-' || a == '*' || a == '=')
 
-#include "DataStructure.h"
-#include "InputParser.h"
-#include "string.h"
+// #include "DataStructure.h"
+// #include "InputParser.h"
+// #include "string.h"
 
-typedef struct{
-    int sign;
-    SignStackNode *prev,*next;
+// typedef struct{
+//     int sign;
+//     SignStackNode *prev,*next;
 
-} SignStackNode;
+// } SignStackNode;
 
-typedef struct{
-    PolyNode *poly;
-    PolyStackNode *prev,*next; 
-} PolyStackNode;
+// typedef struct{
+//     PolyNode *poly;
+//     PolyStackNode *prev,*next; 
+// } PolyStackNode;
 
-typedef struct{
-    char op;// \0 for empty
-    PolyNode *node;// NULL for empty
-} ExpressionNode;
+// typedef struct{
+//     char op;// \0 for empty
+//     PolyNode *node;// NULL for empty
+// } ExpressionNode;
 
-// SignStackNode* PushSign(SignStackNode *top,int sign);
+// // SignStackNode* PushSign(SignStackNode *top,int sign);
 
-// PolyStackNode* PushPoly(PolyStackNode *top,PolyNode *ptr);
+// // PolyStackNode* PushPoly(PolyStackNode *top,PolyNode *ptr);
 
-// PolyNode* PopPoly(PolyStackNode *top);
+// // PolyNode* PopPoly(PolyStackNode *top);
 
-// int PopSign(SignStackNode *top);
+// // int PopSign(SignStackNode *top);
 
-// int prio(int x);
+// // int prio(int x);
 
-// PolyNode *PolyCal(void);
+// // PolyNode *PolyCal(void);
 
-ExpressionNode *Poly_Cal_Input();
+// ExpressionNode *Poly_Cal_Input();
 
 
-#endif // !_POLY_OPERATOR_H_
+// #endif // !_POLY_OPERATOR_H_
