@@ -1,5 +1,5 @@
-#include "Global.h"
-#include "PolyCal.h"
+// #include "Global.h"
+// #include "PolyCal.h"
 
 // SignStackNode* PushSign(SignStackNode *top, int sign) 
 // {
@@ -101,41 +101,41 @@
 //     return k;
 // }
 
-PolyNode *Poly_Cal_Alt(ExpressionNode *head)
-{
+// PolyNode *Poly_Cal_Alt(ExpressionNode *head)
+// {
 
-}
+// }
 
-ExpressionNode *Poly_Cal_Input()
-{
-    int i = 0, k;
-    char expr[200];
-    static ExpressionNode out[20];
-    k = 0;// indicator for out
-    while(1){
-        // initiate a looper
-        i = 0;
-        scanf("%c", &expr[i]);
-        while(expr[i] != '\n'){
-            scanf("%c", &expr[++i]);
-        }
-        // is it a operand?
-        if(expr[1] == '\n' && IS_OPERAND(expr[0])){
-            // consider \n
-            if(expr[0] == '='){
-                out[k].node = NULL;
-                out[k].op = '\0';
-                break;
-            }else{
-                // store a operand ExpressionNode
-                printf("Poly_cal:%c\n", expr[0]);
-                out[k].op = expr[0];
-                out[k++].node = NULL;
-            }
-        }else{
-            out[k].node = Parse_Poly_List(expr);
-            out[k++].op = '\0';
-        }
-    }
-    return out;
-}
+// ExpressionNode *Poly_Cal_Input()
+// {
+//     int i = 0, k;
+//     char expr[200];
+//     static ExpressionNode out[20];
+//     k = 0;// indicator for out
+//     while(1){
+//         // initiate a looper
+//         i = 0;
+//         scanf("%c", &expr[i]);
+//         while(expr[i] != '\n'){
+//             scanf("%c", &expr[++i]);
+//         }
+//         // is it a operand?
+//         if(expr[1] == '\n' && IS_OPERAND(expr[0])){
+//             // consider \n
+//             if(expr[0] == '='){
+//                 out[k].node = NULL;
+//                 out[k].op = '\0';
+//                 break;
+//             }else{
+//                 // store a operand ExpressionNode
+//                 printf("Poly_cal:%c\n", expr[0]);
+//                 out[k].op = expr[0];
+//                 out[k++].node = NULL;
+//             }
+//         }else{
+//             out[k].node = Parse_Poly_List(expr);
+//             out[k++].op = '\0';
+//         }
+//     }
+//     return out;
+// }

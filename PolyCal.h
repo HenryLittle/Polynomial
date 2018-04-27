@@ -7,16 +7,16 @@
 #include "InputParser.h"
 #include "string.h"
 
-// typedef struct{
-//     int sign;
-//     SignStackNode *prev,*next;
+typedef struct{
+    int sign;
+    SignStackNode *prev,*next;
 
-// } SignStackNode;
+} SignStackNode;
 
-// typedef struct{
-//     PolyNode *poly;
-//     PolyStackNode *prev,*next; 
-// } PolyStackNode;
+typedef struct{
+    PolyNode *poly;
+    PolyStackNode *prev,*next; 
+} PolyStackNode;
 
 typedef struct{
     char op;// \0 for empty
