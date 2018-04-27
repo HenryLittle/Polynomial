@@ -65,7 +65,7 @@ PolyNode *Add_Poly_Seq(PolyNode *head, PolyNode *p)
         yPi = ptr->yPow;
         if(IS_CONST_NODE){
             //what to do if node p is a constant
-            // FIXME:
+            // FIXME Fixed!
             PolyNode *tempPtr = ptr;
             while (tempPtr->next != NULL){
                 tempPtr = tempPtr->next;

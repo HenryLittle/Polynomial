@@ -22,6 +22,8 @@ int Get_Option()
         printf("Error Input\n");
     }else if('0' <= ascii && '5' >= ascii){
         return ascii - '0';
+    }else if('h' == ascii){
+        return ascii;
     }else{
         printf("Uhn, not in option\n");
     }
@@ -31,7 +33,7 @@ int Get_Option()
 int main()
 {
     // a welcome here, maybe?
-    //TODO: add the welcome view
+    //TODO Done add the welcome view
     printf(WELCOME);
     system("pause");
     // some preparation
@@ -102,6 +104,13 @@ int main()
                     Print_List(ans);
                     printf("\n");
                 }
+                system("pause");
+                continue;
+                break;
+            case 'h':
+            // print input requirments
+                system("cls");
+                printf(PARSE_RULES);
                 system("pause");
                 continue;
                 break;
