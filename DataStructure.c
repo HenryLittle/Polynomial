@@ -63,7 +63,21 @@ PolyNode *Add_Poly_Seq(PolyNode *head, PolyNode *p)
         ai = ptr->a;
         xPi = ptr->xPow;
         yPi = ptr->yPow;
-        if(xPi == xPow && yPi == yPow){
+        if(IS_CONST_NODE){
+            //what to do if node p is a constant
+            // FIXME:
+            PolyNode *tempPtr = ptr;
+            while (tempPtr->next != NULL){
+                tempPtr = tempPtr->next;
+            }
+            if(tempPtr->xPow == 0 && tempPtr->yPow == 0){
+                tempPtr->a += a;
+            }else{
+                // add to last
+                Add_Poly_Node(head, p, 1);
+            }
+            return head;
+        }else if(xPi == xPow && yPi == yPow){
             //merge
             ptr->a = ai + a;
             return head;
@@ -98,9 +112,6 @@ PolyNode *Add_Poly_Seq(PolyNode *head, PolyNode *p)
                 ptr = ptr->next;
                 continue; 
             }
-        }else if(IS_CONST_NODE){
-            //what to do if node p is a constant
-            return Add_Poly_Node(head, p, 2);
         }else if(xPi <= xPow && yPi < yPow){
             //in the front
             //if it's the first node

@@ -9,7 +9,7 @@ PolyNode *Poly_Operation_Add(PolyNode *a, PolyNode *b)
         //copy the origianl node
         node = (PolyNode*)malloc(sizeof(PolyNode));
         *node = *p;
-        printf("%d %d %d\n", node->a, node->xPow, node->yPow);
+        //printf("%d %d %d\n", node->a, node->xPow, node->yPow);
         result = Add_Poly_Seq(result, node);
     }
     for(p = b; p != NULL; p = p-> next){
