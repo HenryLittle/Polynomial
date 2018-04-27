@@ -14,7 +14,7 @@ char WELCOME[400] = {
     "#  \\\\    /  \\\\    /           ||  \\____  |          #\n"
     "#   \\\\  /    \\\\  /        TO  ||__/ /  \\ |          #\n"
     "#    \\\\/      \\\\/ ElCOME      ||    \\__/ |___       #\n"
-    "#                                    ----by 33Group #\n"
+    "#                                    ----by Group33 #\n"
     "#####################################################\n"
 };
 char CHOOSE_INPUT[80] = {"Please choose your input mode:\n[n]:normal input\n[x]:complex input\n[0]:quit\n"};
