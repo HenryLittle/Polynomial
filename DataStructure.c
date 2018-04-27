@@ -67,23 +67,58 @@ PolyNode *Add_Poly_Seq(PolyNode *head, PolyNode *p)
             //merge
             ptr->a = ai + a;
             return head;
-        }else if(xPi <= xPow && yPi >= yPow){
-            //in the front
-            //if it's the first node
-            if(1 == position){
-                ptr->prev = p;
-                p->prev = NULL;
-                p->next = ptr;
-                head = p;
-                return head;
-            }else{
-                ptr->prev->next = p;
-                p->prev = ptr->prev;
-                p->next = ptr;
-                ptr->prev = p;
-                return head;
-            }
-        }else if(xPi > xPow){
+        }else if (xPi < xPow) {
+			//in the front
+			//if it's the first node
+			if (1 == position) {
+				ptr->prev = p;
+				p->prev = NULL;
+				p->next = ptr;
+				head = p;
+				return head;
+			}
+			else {
+				ptr->prev->next = p;
+				p->prev = ptr->prev;
+				p->next = ptr;
+				ptr->prev = p;
+				return head;
+			}
+		}else if (xPi == xPow && yPi < yPow) {
+			//in the front
+			//if it's the first node
+			if (1 == position) {
+				ptr->prev = p;
+				p->prev = NULL;
+				p->next = ptr;
+				head = p;
+				return head;
+			}
+			else {
+				ptr->prev->next = p;
+				p->prev = ptr->prev;
+				p->next = ptr;
+				ptr->prev = p;
+				return head;
+			}
+		}
+		else if (xPi == xPow && yPi > yPow) {
+			//behind
+			//check the latter node
+			if (ptr->next == NULL) {
+				//if it is the last node
+				p->next = NULL;
+				p->prev = ptr;
+				ptr->next = p;
+				return head;
+			}
+			else {
+				//if it is in the middle
+				//dodge it change it to the previous(front) case
+				ptr = ptr->next;
+				continue;
+			}
+	    }else if(xPi > xPow){
             //behind
             //check the latter node
             if(ptr->next == NULL){
