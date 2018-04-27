@@ -31,6 +31,9 @@ int Get_Option()
 int main()
 {
     // a welcome here, maybe?
+    //TODO: add the welcome view
+    printf(WELCOME);
+    system("pause");
     // some preparation
     PolyNode *ans = NULL, *polyNode = NULL;
     // init a looper
@@ -94,7 +97,7 @@ int main()
             case 5: 
             // print the result
                 if(ans == NULL){
-                    printf("Empty polynomial :(\nInput one?\n");
+                    printf("Empty polynomial :\n(Input one?)\n");
                 }else{
                     Print_List(ans);
                     printf("\n");
