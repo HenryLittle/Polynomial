@@ -112,6 +112,21 @@ PolyNode *Add_Poly_Seq(PolyNode *head, PolyNode *p)
                 ptr = ptr->next;
                 continue; 
             }
+        }else if(xPi >= xPow && yPi < yPow){
+            //behind
+            //check the latter node
+            if(ptr->next == NULL){
+                //if it is the last node
+                p->next = NULL;
+                p->prev = ptr;
+                ptr->next = p;
+                return head;
+            }else{
+                //if it is in the middle
+                //dodge it change it to the previous(front) case
+                ptr = ptr->next;
+                continue; 
+            }
         }else if(xPi <= xPow && yPi < yPow){
             //in the front
             //if it's the first node
